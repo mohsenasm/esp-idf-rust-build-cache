@@ -1,8 +1,11 @@
 FROM docker.io/espressif/idf-rust:esp32_latest
 
-USER esp
+USER root
 COPY . /home/esp/code
 WORKDIR /home/esp/code
+
+RUN sudo chown -R esp /home/esp/code
+USER esp
 
 # RUN . /home/esp/export-esp.sh
 ENV LIBCLANG_PATH /home/esp/.rustup/toolchains/esp/xtensa-esp32-elf-clang/esp-16.0.4-20231113/esp-clang/lib
