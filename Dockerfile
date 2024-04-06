@@ -4,4 +4,5 @@ USER root
 COPY . /home/esp/code
 
 WORKDIR /home/esp/code
-RUN ls -la && cargo build
+RUN . /home/esp/export-esp.sh
+RUN cargo build
