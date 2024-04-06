@@ -4,7 +4,7 @@ USER root
 COPY . /home/esp/code
 WORKDIR /home/esp/code
 
-RUN sudo chown -R esp /home/esp/code
+RUN chown -R esp /home/esp/code
 USER esp
 
 # RUN . /home/esp/export-esp.sh
