@@ -4,9 +4,4 @@ USER root
 COPY . /home/esp/code
 
 WORKDIR /home/esp/code
-RUN echo $LIBCLANG_PATH
-RUN echo $PATH
-RUN source /home/esp/export-esp.sh
-RUN echo $LIBCLANG_PATH
-RUN echo $PATH
-RUN cargo build
+RUN . /home/esp/export-esp.sh && cargo build
